@@ -1,0 +1,6 @@
+nguyên lý hoạt động cơ điện
+chân cảm biến
+DO trả lại 2 trạng thái: cao trả về gì, thấp trả về gì
+AO: trả điện áp analog, trả lai cảm biến môi trường, nối
+
+mô tả sơ đồ chân 
