@@ -1,0 +1,18 @@
+- Chu kỳ: T = 1/f
+- Tần số PWM có thể được điều chỉnh qua các ngắt của vi điều khiển ATmega,
+thông số mặc định ở các pin 5, 6 là 1000 Hz và pin 9, 10, 11 là 500Hz.
+- giả sử gắn pin 5, 6: f  = 1000hz => T = 1/1000 = 0.001s
+- Xung khi cảm biến rung state On:
+  measurePulseHigh = 25000micros * 10^-6 = 0.025s
+- if measurePulseHigh >= T
++ pwm có duty cycle 100% => rung tối đa
+- else
++ D(Duty Cycle) = measurePulseHigh / T * 100%
+(+ measurePulseLow = 2000 * 10^-6 = 0.002
+=> D(Duty Cycle) = measurePulseHigh / (measurePulseHigh + measurePulseLow) * 100%)
++ Tính hiệu điện thế trung bình: Uavg = D * Vmax = D * 5 = ...
++ Sau đó tính toán ngưỡng và cho chạy đèn led hoặc tăng dần độ sáng led và còi 
+
+- còi nó có nhiều hàm á, không phải mỗi digitalWrite mô
+tone(pin, sound), hàm ni điều chỉnh được độ to nhỏ còi  
+notone(), hàm ni tắt còi
