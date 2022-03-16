@@ -1,0 +1,6 @@
+- dac
+https://dientutuonglai.com/bo-chuyen-doi-dac-la-gi.html#:~:text=B%E1%BB%99%20chuy%E1%BB%83n%20%C4%91%E1%BB%95i%20k%E1%BB%B9%20thu%E1%BA%ADt,%C6%B0u%20v%C3%A0%20nh%C6%B0%E1%BB%A3c%20%C4%91i%E1%BB%83m%20ri%C3%AAng.
+- pwm 
+https://www.hwlibre.com/vi/pwm/
+
+https://blog.unicloud.com.vn/arduino/arduino-pwm/
