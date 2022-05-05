@@ -1,0 +1,3 @@
+if (self.CavalryLogger) { CavalryLogger.start_js_script(document.currentScript); }
+
+__d("MWInboxUncaughtError.react",["fbt","CometContentArea.react","TetraNullState.react","react"],(function(a,b,c,d,e,f,g,h){"use strict";var i=d("react");function a(){return i.jsx("div",{className:"k4urcfbm taijpn5t nznu9b0o j83agx80 bp9cbjyn",children:i.jsx(c("CometContentArea.react"),{verticalAlign:"middle",children:i.jsx(c("TetraNullState.react"),{headline:h._(/*FBT_CALL*/"R\u1ea5t ti\u1ebfc! \u0110\u00e3 x\u1ea3y ra l\u1ed7i :("/*FBT_CALL*/)})})})}a.displayName=a.name+" [from "+f.id+"]";g["default"]=a}),98);
