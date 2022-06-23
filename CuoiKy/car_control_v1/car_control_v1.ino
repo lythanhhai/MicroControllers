@@ -24,7 +24,9 @@ Servo servo_motor; //our servo name
 int distanceRight = 0;
 int distanceLeft = 0;
 
-void setup() {
+void setup()
+{
+  
   // put your setup code here, to run once:
   Serial.begin(9600);
   Serial.println(">> START<<");  
@@ -49,18 +51,22 @@ void setup() {
 
   analogWrite(motorSpeed1, 0);  // chinh toc do dong co ben trai
   analogWrite(motorSpeed2, 0); // chinh toc do dong co ben phai
+
 }
 
 void loop() {
-
+  delay(300);
   if(Serial.available() > 0)
   {
-    sendDistanceToApp(distance);
+    // sendDistanceToApp(distance);
+    String data1 = Serial.readString();
+    char moveAction = data1[0];
+    int speedFromApp = data1.substring(2, data1.length()).toInt();
+    // char data1[100] = "";
+    
     char data;
-    int speedFromApp;
-    char data1[100] = "";
     data = Serial.read();
-    // Serial.write(Serial.read());
+    // Serial.write(distance);
     // Serial.write(Serial.read());
     Serial.println(data);
 
@@ -88,6 +94,11 @@ void loop() {
 
     }
     
+  }
+  else 
+  {
+    sendDistanceToApp(distance);
+    Serial.write(String(distance));
   }
 
 }
@@ -126,7 +137,7 @@ int readPing()
   int cm = sonar.ping_cm();
   if (cm == 0)
   {
-    cm=250;
+    cm = 250;
   }
   return cm;
   
@@ -220,7 +231,8 @@ void moveStop()
 void sendDistanceToApp(distance)
 {
   
-  if (distance <= 20){
+  if (distance <= 20)
+  {
     moveStop(); // dung lai
     delay(300);
     distanceRight = lookRight(); // lay khoang cach ben trai
@@ -231,24 +243,24 @@ void sendDistanceToApp(distance)
     Serial.print("Khoang cach trai: ");
     Serial.println(distanceLeft);
    
-    if (distance >= distanceLeft)
-    { 
-      
-      // neu khoang cach hien tai >= khoang cach ben trai 
-      turnRight(); //re phai
-      
-    }
-    else
-    { 
-      
-      // ko thi
-      turnLeft(); // re trai
-      
-    }
+//    if (distance >= distanceLeft)
+//    { 
+//      
+//      // neu khoang cach hien tai >= khoang cach ben trai 
+//      moveRight(); //re phai
+//      
+//    }
+//    else
+//    { 
+//      
+//      // ko thi
+//      moveLeft(); // re trai
+//      
+//    }
   }
   else
   {
-    moveForward();  // ko phai 2 truong hop tren thi chay thang
+    // moveForward();  // ko phai 2 truong hop tren thi chay thang
   }
   distance = readPing();
   Serial.print("Khoang cach hien tai: ");
